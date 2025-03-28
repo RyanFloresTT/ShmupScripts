@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a6b834b4282ff840ac55d9283cca9dd, type: 3}
+  m_Name: Enemy Loot Table
+  m_EditorClassIdentifier: 
+  lootItems:
+  - Prefab: {fileID: 2472151836675880378, guid: 0ad93f445f289784d918ed1d16d51340,
+      type: 3}
+    MinDrops: 2
+    MaxDrops: 4
+    DropChance: 0.75
+  - Prefab: {fileID: 811077019415734385, guid: 7d07d4fdbf975794295126e934e70ffd, type: 3}
+    MinDrops: 1
+    MaxDrops: 1
+    DropChance: 0.05
+  - Prefab: {fileID: 505838299801268837, guid: e101a77540a7ad74d9d1bfa8be143224, type: 3}
+    MinDrops: 1
+    MaxDrops: 3
+    DropChance: 0.2
+  dropRadius: 1

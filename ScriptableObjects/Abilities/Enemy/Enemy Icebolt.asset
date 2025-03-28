@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9027768042831530144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea90c5c2ccecbf408289615f67deb14, type: 3}
+  m_Name: New Modifier
+  m_EditorClassIdentifier: 
+  Type: 2
+  OperatorType: 1
+  Value: 0.5
+  Duration: 5
+  VFX: {fileID: 6126188424833946103, guid: 596e01552636bd14bb52d1f55b210435, type: 3}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d43313a5d48a843811d83e30f3d19e, type: 3}
+  m_Name: Enemy Icebolt
+  m_EditorClassIdentifier: 
+  AbilityName: Enemy Ice Bolt
+  Icon: {fileID: 21300000, guid: d5eea65eecd8cdf43b078a6e64bb9a42, type: 3}
+  UnlockLevel: 1
+  CooldownSecs: 1
+  ResourceCost: 0
+  ResourceGeneration: 5
+  CastSFX: {fileID: 8300000, guid: bc9b2027d01c20d4e8164f63d01919dc, type: 3}
+  AbilityAnimation: {fileID: -203655887218126122, guid: d2e7f0c6b80a9ca45a0b34aafa931213,
+    type: 3}
+  DamageScalar: 1.01
+  ProcChance: 0.1
+  Speed: 10
+  Projectile: {fileID: 1547327380002732401, guid: 899960e970d60174f85efde9731e0334,
+    type: 3}
+  SecondTimeout: 5
+  Modifiers:
+  - {fileID: -9027768042831530144}
+  isPiercing: 0
+  ExplosionSFX: {fileID: 8300000, guid: 2a7a4c1b475094e4cbcb84bb6a76a63d, type: 3}

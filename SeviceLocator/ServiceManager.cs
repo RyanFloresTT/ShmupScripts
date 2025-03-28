@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+// -----------------------------------------------------------------------
+// This script is based on code from git-amend's YouTube channel.
+// Original source: [Learn to Build an Advanced Event Bus | Unity Architecture] (https://www.youtube.com/watch?v=4_DTAnigmaQ)
+// -----------------------------------------------------------------------
+
+
+namespace UnityServiceLocator {
+    public class ServiceManager {
+        readonly Dictionary<Type, object> services = new();
+        public IEnumerable<object> RegisteredServices => this.services.Values;
+
+        public bool TryGet<T>(out T service) where T : class {
+            Type type = typeof(T);
+            if (this.services.TryGetValue(type, out object obj)) {
+                service = obj as T;
+                return true;
+            }
+
+            service = null;
+            return false;
+        }
+
+        public T Get<T>() where T : class {
+            Type type = typeof(T);
+            if (this.services.TryGetValue(type, out object obj)) return obj as T;
+
+            throw new ArgumentException($"ServiceManager.Get: Service of type {type.FullName} not registered");
+        }
+
+        public ServiceManager Register<T>(T service) {
+            Type type = typeof(T);
+
+            if (!this.services.TryAdd(type, service))
+                Debug.LogWarning($"ServiceManager.Register: Service of type {type.FullName} already registered");
+
+            return this;
+        }
+
+        public ServiceManager Register(Type type, object service) {
+            if (!type.IsInstanceOfType(service))
+                throw new ArgumentException("Type of service does not match type of service interface",
+                    nameof(service));
+
+            if (!this.services.TryAdd(type, service))
+                Debug.LogError($"ServiceManager.Register: Service of type {type.FullName} already registered");
+
+            return this;
+        }
+    }
+}
